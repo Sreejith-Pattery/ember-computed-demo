@@ -1,0 +1,19 @@
+
+<div class="container">
+First Name: {{input type='text' value=firstName}}<br/>
+{{display-errors errors=errors showErrors=showErrors}}<br/>
+Last Name: {{input type='text' value=lastName}}<br/>
+Full Name: {{input type='text' value=fullName}}<br/>
+Company: {{input type='text' value=companyName}}<br/>
+Business Card: {{input type='text' value=businessCard}}<br/>
+<button id=btnValidate {{action 'validate'}} >Validate</button>
+<h4>Relevant Documentaries</h4>
+{{#each documentaries as |documentary|}}
+    {{input value=documentary.name}}, released in {{input value=documentary.release}} for a budget of {{input value=documentary.budget}} bringing in {{input value=documentary.boxOffice}}<br/>
+{{/each}}
+<br/>
+Title:{{textarea value=titles}}
+<br/>
+Total Budget:{{totalDocumentaryBudget}}<br/>
+Total Profit:{{totalDocumentaryProfit}}<br/>
+</div>
